@@ -1,0 +1,29 @@
+.main-container{
+    position: relative;
+    min-height: 101vh;
+    margin-left: 290px;
+    padding: 0 12px;
+    padding-left: 59px;
+    background-color: #F2F2F2;
+}
+
+/* .main-container::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 0px;
+    right: 0px;
+    background-image: url("../../../assets/images/technolygia.png");
+    background-position: bottom right;
+    z-index: 1;
+} */
+
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    .main-container{
+        margin-left: unset;
+        padding: 0 12px;
+  }
+}

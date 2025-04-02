@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { Outlet } from 'react-router-dom';
+import SidebarMenu from './sidebar/SidebarMenu';
+import {Main} from './main';
+import { Header } from './header';
 
 export interface IMainLayoutProps {
-  children: React.ReactNode; 
+    children: React.ReactNode; 
 }
 
 export default function MainLayout (props: IMainLayoutProps) {
+  const [sidebarVisible, setSidebarVisible] = React.useState(false);
   return (
     <div>
-      <p>Layout</p>
-      {props.children}
+      <SidebarMenu sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+      <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+      <Main>{props.children}</Main>
     </div>
   );
 }
