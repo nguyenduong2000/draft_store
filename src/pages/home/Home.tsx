@@ -13,7 +13,7 @@ import img_trending_3 from "../../assets/trending_3.png"
 
 export interface IHomeProps {}
 
-const featuredApps = [
+export const featuredApps = [
   {
     id: 1,
     title: "Viettel Money",
@@ -32,7 +32,7 @@ const featuredApps = [
   },
 ];
 
-const trendingApps = [
+export const trendingApps = [
   {
     id: 1,
     title: "Viettel Post",
@@ -59,7 +59,7 @@ const trendingApps = [
   },
 ];
 
-const popularApps = [
+export const popularApps = [
   {
     id: 1,
     title: "Viettel Post",
@@ -102,7 +102,7 @@ const popularApps = [
   },
 ];
 
-const recentApps = [
+export const recentApps = [
   {
     id: 1,
     title: "Viettel Post",

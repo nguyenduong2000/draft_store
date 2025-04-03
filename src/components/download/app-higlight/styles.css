@@ -1,0 +1,93 @@
+.app-highlight {
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgb(119 119 119 / 22%);
+  width: max-content;
+  padding: 24px;
+}
+
+.highlight-card {
+  background-color: white;
+  border-radius: 12px;
+  gap: 20px;
+}
+
+.app-logo > img{
+  height: 100px;
+  width: 100px;
+  margin-bottom: 16px;
+}
+
+.app-details {
+  flex: 1;
+}
+
+.app-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.app-details p {
+  font-size: 14px;
+  color: #8D8E8F;
+  margin-bottom: 10px;
+}
+
+.app-actions {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.action-button {
+  background: none;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.download-android,
+.download-ios {
+  background-color: #ee0033;
+  padding: 8px 20px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  width: 140px;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.app-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.app-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fffade;
+  padding: 4px 8px;
+  border-radius: 20px;
+  width: max-content;
+}
+
+.app-card-downloads {
+    font-size: 14px;
+    color: #333333;
+  }
