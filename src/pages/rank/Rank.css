@@ -1,0 +1,172 @@
+.wrapper-rank{
+    margin: 32px;
+}
+
+.search-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  height: 40px;
+  width: 363px;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  border: 1px solid #ffffff;
+}
+
+.search-container > img {
+  padding-left: 20px;
+}
+
+.search-container > input {
+  background-color: transparent;
+  outline: none;
+  border: 0px;
+  font-size: 14px;
+  padding: 10px 8px;
+  width: 85%;
+}
+
+.search-container > input::placeholder {
+  font-weight: 500;
+  color: #b8b8b8;
+  font-size: 14px;
+}
+
+.header-rank {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.filter-block {
+  display: flex;
+  align-items: center;
+}
+
+.btn-filter {
+  display: flex;
+  align-items: center;
+  background-color: #b8b8b8;
+  color: #ffffff;
+  font-size: 14px;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-filter > img {
+  padding-right: 8px;
+}
+
+.wrapper-rank .app-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  float: right;
+}
+
+.app-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fffade;
+  padding: 4px 8px;
+  border-radius: 20px;
+  margin-right: 12px;
+} 
+
+.app-card-downloads {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.table-rank-container {
+  margin-top: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px 12px 32px;
+  box-shadow: 0 1px 3px rgb(119 119 119 / 22%);
+}
+
+.app-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 24px;
+  background-color: #F2F2F2;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.app-list-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-list-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-list-item-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 16px;
+  color: #5B6065;
+}
+
+.app-list-item-provider {
+font-weight: 500;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #8D8E8F;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex > div > label {
+    font-size: 40px;
+    color: #8D8E8F;
+    font-weight: 700;
+}
+
+.items-center{
+    align-items: center;
+}
+
+/* top 1 ranking */
+
+.app-list-item-top-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 24px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: #EE0033;
+    color: white;
+}
+
+.app-card-rating-top-1{
+    background-color: #FFFADE4D;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+
+.color-white{
+    color: #ffffff !important;
+}
+
+.color-gray{
+    color: #ededed !important;
+}
+
+/*  */

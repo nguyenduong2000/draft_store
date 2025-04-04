@@ -1,0 +1,10 @@
+/* Loại bỏ viền khi hover hoặc focus */
+.ant-input:focus,
+.ant-input:hover {
+  border-color: #eeeeee !important;
+  box-shadow: none !important;
+}
+
+.custom-text-area{
+    border-color: #eeeeee;
+}

@@ -1,0 +1,15 @@
+.ant-select-selector{
+    border-color: #eeeeee !important;
+}
+
+/* Tắt màu border của Select khi hover hoặc focus */
+.ant-select-focused .ant-select-selector {
+  border-color: #eeeeee !important;
+  box-shadow: none !important;
+}
+
+/* Tắt màu border của Select khi hover */
+.ant-select:hover .ant-select-selector {
+  border-color: #eeeeee !important;
+  box-shadow: none !important;
+}
