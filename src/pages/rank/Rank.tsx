@@ -79,7 +79,7 @@ const ranks = [
 function Rank() {
   const SearchComponent = () => {
     return (
-      <div className="search-container">
+      <div className="rank-search-container">
         <img src={icSearch} alt="" />
         <input type="text" placeholder="Tìm kiếm ứng dụng" />
       </div>
@@ -87,47 +87,56 @@ function Rank() {
   };
 
   return (
-    <div className="wrapper-rank">
-      <div className="header-rank">
+    <div className="rank-wrapper-rank">
+      <div className="rank-header-rank">
         <h3>Bảng xếp hạng</h3>
-        <div className="filter-block">
+        <div className="rank-filter-block">
           <SearchComponent />
-          <div className="btn-filter">
+          <div className="rank-btn-filter">
             <img src={icFilter} alt="icon filter" />
             <span>Filter</span>
           </div>
         </div>
       </div>
-      <div className="table-rank-container">
-        <ul className="rank-list">
+      <div className="rank-table-rank-container">
+        <ul className="rank-rank-list">
           {ranks.length > 0 &&
             ranks.map((item, index) => (
               <li
+                key={index}
                 className={`${
-                  index === 0 ? "app-list-item-top-1" : "app-list-item"
+                  index === 0
+                    ? "rank-app-list-item-top-1"
+                    : "rank-app-list-item"
                 }`}
               >
-                <div className="flex items-center">
-                  <div style={{ width: "65px", textAlign: "center", paddingRight:"16px" }}>
-                    <label className={index === 0 ? " color-white" : " "}>
+                <div className="rank-flex rank-items-center">
+                  <div
+                    style={{
+                      width: "65px",
+                      textAlign: "center",
+                      paddingRight: "16px",
+                    }}
+                  >
+                    <label className={index === 0 ? "rank-color-white" : " "}>
                       {index + 1}
                     </label>
                   </div>
-                  <div className="app-list-item-info">
+                  <div className="rank-app-list-item-info">
                     <Avatar src={item.img} size={40} />
-                    <div className="app-list-item-details">
+                    <div className="rank-app-list-item-details">
                       <h3
                         className={
-                          "app-list-item-title" +
-                          (index === 0 ? " color-white" : "")
+                          "rank-app-list-item-title" +
+                          (index === 0 ? " rank-color-white" : "")
                         }
                       >
                         {item.title}
                       </h3>
                       <p
                         className={
-                          "app-list-item-provider" +
-                          (index === 0 ? " color-gray" : "")
+                          "rank-app-list-item-provider" +
+                          (index === 0 ? " rank-color-gray" : "")
                         }
                       >
                         {item.provider}
@@ -135,10 +144,12 @@ function Rank() {
                     </div>
                   </div>
                 </div>
-                <div className="app-card-stats">
+                <div className="rank-app-card-stats">
                   <div
                     className={`${
-                      index === 0 ? "app-card-rating-top-1" : "app-card-rating"
+                      index === 0
+                        ? "rank-app-card-rating-top-1"
+                        : "rank-app-card-rating"
                     }`}
                   >
                     <span>{item.rate}</span>
@@ -155,7 +166,8 @@ function Rank() {
                   </div>
                   <span
                     className={
-                      "app-card-downloads" + (index === 0 ? " color-white" : "")
+                      "rank-app-card-downloads" +
+                      (index === 0 ? " rank-color-white" : "")
                     }
                   >
                     {item.downloads} lượt tải

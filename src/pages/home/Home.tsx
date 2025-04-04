@@ -7,9 +7,9 @@ import { AppCard } from "../../components/home/AppCard";
 import FeaturedApp from "../../components/home/FeaturedApp/FeaturedApp";
 import { Content } from "antd/es/layout/layout";
 import AppListItem from "../../components/home/AppListItem/AppListItem";
-import img_trending_1 from "../../assets/trending_1.png"
-import img_trending_2 from "../../assets/trending_2.png"
-import img_trending_3 from "../../assets/trending_3.png"
+import img_trending_1 from "../../assets/trending_1.png";
+import img_trending_2 from "../../assets/trending_2.png";
+import img_trending_3 from "../../assets/trending_3.png";
 
 export interface IHomeProps {}
 
@@ -39,7 +39,7 @@ export const trendingApps = [
     provider: "Viettel IDC",
     rating: 4.7,
     downloads: 1890,
-    image: img_trending_1
+    image: img_trending_1,
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ export const trendingApps = [
     provider: "Viettel IDC",
     rating: 4.6,
     downloads: 1750,
-    image: img_trending_2
+    image: img_trending_2,
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export const trendingApps = [
     provider: "Viettel IDC",
     rating: 4.5,
     downloads: 1620,
-    image: img_trending_3
+    image: img_trending_3,
   },
 ];
 
@@ -152,15 +152,15 @@ export const recentApps = [
 
 export default function Home(props: IHomeProps) {
   return (
-    <div className="flow-x-hidden">
+    <div className="home-flow-x-hidden">
       <Row gutter={24}>
         <Col xs={24} sm={24} md={24} lg={18}>
           <Banner banners={[banner, banner, banner, banner]} />
 
           {/* Featured Apps Section */}
-          <section className="section-container mt-42">
-            <div className="section-header">
-              <h2 className="section-title">Ứng dụng nội bộ</h2>
+          <section className="home-section-container mt-42">
+            <div className="home-section-header">
+              <h2 className="home-section-title">Ứng dụng nội bộ</h2>
               <Tabs
                 defaultActiveKey="all"
                 items={[
@@ -172,7 +172,7 @@ export default function Home(props: IHomeProps) {
               />
             </div>
 
-            <div className="app-grid">
+            <div className="home-app-grid">
               <Row gutter={[24, 24]}>
                 {featuredApps.map((app) => (
                   <Col xs={24} sm={12} lg={12} key={app.id}>
@@ -190,9 +190,9 @@ export default function Home(props: IHomeProps) {
           </section>
 
           {/* Trending Apps Section */}
-          <section className="section-container">
-            <h2 className="section-title">Ứng dụng thịnh hành</h2>
-            <div className="app-grid">
+          <section className="home-section-container">
+            <h2 className="home-section-title">Ứng dụng thịnh hành</h2>
+            <div className="home-app-grid">
               <Row gutter={[24, 24]}>
                 {trendingApps.map((app) => (
                   <Col xs={24} sm={12} lg={8} key={app.id}>
@@ -204,9 +204,9 @@ export default function Home(props: IHomeProps) {
           </section>
 
           {/* Apps by Category Section */}
-          <section className="section-container">
-            <div className="section-header">
-              <h2 className="section-title">Ứng dụng theo dơn vị</h2>
+          <section className="home-section-container">
+            <div className="home-section-header">
+              <h2 className="home-section-title">Ứng dụng theo dơn vị</h2>
               <Tabs
                 defaultActiveKey="all"
                 items={[
@@ -218,7 +218,7 @@ export default function Home(props: IHomeProps) {
               />
             </div>
 
-            <div className="app-grid">
+            <div className="home-app-grid">
               <Row gutter={[24, 24]}>
                 {featuredApps.map((app) => (
                   <Col xs={24} sm={12} lg={12} key={`category-${app.id}`}>
@@ -237,15 +237,15 @@ export default function Home(props: IHomeProps) {
         </Col>
         <Col xs={24} sm={24} md={24} lg={6}>
           {/* Recent Apps Section */}
-          <section className="section-container">
+          <section className="home-section-container">
             <Row gutter={24}>
               <Col xs={24} sm={12} md={12} lg={24}>
                 <div
-                  className="panel-container"
+                  className="home-panel-container"
                   style={{ marginBottom: "24px" }}
                 >
-                  <h2 className="panel-title">Ứng dụng nổi bật</h2>
-                  <div className="app-list">
+                  <h2 className="home-panel-title">Ứng dụng nổi bật</h2>
+                  <div className="home-app-list">
                     {popularApps.map((app) => (
                       <AppListItem
                         key={app.id}
@@ -258,9 +258,9 @@ export default function Home(props: IHomeProps) {
                 </div>
               </Col>
               <Col xs={24} sm={12} md={12} lg={24}>
-                <div className="panel-container">
-                  <h2 className="panel-title">Ứng dụng gần đây</h2>
-                  <div className="app-list">
+                <div className="home-panel-container">
+                  <h2 className="home-panel-title">Ứng dụng gần đây</h2>
+                  <div className="home-app-list">
                     {recentApps.map((app) => (
                       <AppListItem
                         key={app.id}

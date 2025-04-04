@@ -9,18 +9,18 @@ import appHiglight from "../../assets/app.png";
 
 function Download() {
   return (
-    <div className="flow-x-hidden">
+    <div className="download-page flow-x-hidden">
       <Row gutter={24}>
         <Col xs={24} sm={24} md={24} lg={18}>
           {/* Banner Apps Section */}
-          <section>
+          <section className="download-banner">
             <BannerThumbnails />
           </section>
 
           {/* Related Apps Section */}
-          <section className="section-container">
-            <h2 className="section-title">Ứng dụng cùng đơn vị</h2>
-            <div className="app-grid">
+          <section className="download-related-apps">
+            <h2 className="download-section-title">Ứng dụng cùng đơn vị</h2>
+            <div className="download-app-grid">
               <Row gutter={[24, 24]}>
                 {trendingApps.map((app) => (
                   <Col xs={24} sm={12} lg={8} key={app.id}>
@@ -32,9 +32,9 @@ function Download() {
           </section>
 
           {/* Trending Apps Section */}
-          <section className="section-container">
-            <div className="section-header">
-              <h2 className="section-title">Ứng dụng nổi bật</h2>
+          <section className="download-trending-apps">
+            <div className="download-section-header">
+              <h2 className="download-section-title">Ứng dụng nổi bật</h2>
               <Tabs
                 defaultActiveKey="all"
                 items={[
@@ -46,7 +46,7 @@ function Download() {
               />
             </div>
 
-            <div className="app-grid">
+            <div className="download-app-grid">
               <Row gutter={[24, 24]}>
                 {featuredApps.map((app) => (
                   <Col xs={24} sm={12} lg={12} key={`category-${app.id}`}>
