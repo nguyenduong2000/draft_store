@@ -47,36 +47,51 @@ export default function Notifications() {
   }
 
   return (
-    <div className="notification-container">
-      <div className="notification-header">
-        <h2>Thông báo</h2>
-      </div>
-      <div className="notification-list">
-        {notifications.map((notification) => (
-          <div key={notification.id} className="notification-item" onClick={() => markAsRead(notification.id)}>
-            <div className={`notification-content ${notification.isRead ? 'notification-readed' :''}`}>
-              <div className="notification-text">
-                <p className="notification-title">Ứng dụng [{notification.appName}] có cập nhật mới</p>
-                <p className="notification-description">{notification.description}</p>
-                <p className="notification-time">{notification.timestamp}</p>
-              </div>
-              {!notification.isRead && <div className="unread-indicator"></div>}
-              {notification.id === "3" && (
-                <button
-                  className="dismiss-button"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    dismissNotification(notification.id)
-                  }}
-                >
-                  ×
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="mystore-notification-container">
+    <div className="mystore-notification-header">
+      <h2>Thông báo</h2>
     </div>
+    <div className="mystore-notification-list">
+      {notifications.map((notification) => (
+        <div
+          key={notification.id}
+          className="mystore-notification-item"
+          onClick={() => markAsRead(notification.id)}
+        >
+          <div
+            className={`mystore-notification-content ${
+              notification.isRead ? "mystore-notification-readed" : ""
+            }`}
+          >
+            <div className="mystore-notification-text">
+              <p className="mystore-notification-title">
+                Ứng dụng [{notification.appName}] có cập nhật mới
+              </p>
+              <p className="mystore-notification-description">
+                {notification.description}
+              </p>
+              <p className="mystore-notification-time">{notification.timestamp}</p>
+            </div>
+            {!notification.isRead && (
+              <div className="mystore-unread-indicator"></div>
+            )}
+            {notification.id === "3" && (
+              <button
+                className="mystore-dismiss-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  dismissNotification(notification.id);
+                }}
+              >
+                ×
+              </button>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
   )
 }
 
