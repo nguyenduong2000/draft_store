@@ -4,15 +4,16 @@
 
 .home-section-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
 }
 
 .home-section-title {
   font-size: 20px;
   font-weight: 500;
-  margin: 0;
+  margin-bottom: 16px;
+
 }
 
 .home-app-grid {
@@ -76,4 +77,11 @@
 
 .home-flow-x-hidden {
   overflow-x: hidden;
+}
+
+@media (max-width: 450px) {
+  .ant-tabs-tab {
+    padding-right: 13px !important;
+    padding-left: 13px !important;
+  }
 }

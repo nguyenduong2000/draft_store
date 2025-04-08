@@ -1,12 +1,16 @@
 import type React from "react";
 import "./FeaturedApp.css";
+import { BaseHTMLAttributes } from "react";
 
-interface FeaturedAppProps {
+interface FeaturedAppProps<T> extends BaseHTMLAttributes<T> {
   title: string;
   image: string;
 }
 
-const FeaturedApp: React.FC<FeaturedAppProps> = ({ title, image }) => {
+const FeaturedApp = <T extends HTMLElement>({
+  title,
+  image,
+}: FeaturedAppProps<T>) => {
   return (
     <div className="featured-app">
       <div className="featured-app-image-container">

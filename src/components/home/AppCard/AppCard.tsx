@@ -3,8 +3,9 @@ import { Rate } from "antd"
 import icArrowRight from "../../../assets/ic_arrow_right.png"
 import imgApp from "../../../assets/image_app.png"
 import "./styles.css"
+import { BaseHTMLAttributes } from "react"
 
-interface AppCardProps {
+interface AppCardProps<T> extends BaseHTMLAttributes<T> {
   title: string
   provider: string
   rating: number
@@ -12,7 +13,7 @@ interface AppCardProps {
   image: string
 }
 
-const AppCard: React.FC<AppCardProps> = ({ title, provider, rating, downloads, image }) => {
+const AppCard = <T extends HTMLElement> ({ title, provider, rating, downloads, image }: AppCardProps<T>) => {
   return (
     <div className="app-card">
       <div className="app-card-image-container">

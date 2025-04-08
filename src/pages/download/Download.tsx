@@ -6,12 +6,14 @@ import { featuredApps, trendingApps } from "../home/Home";
 import { BannerThumbnails } from "../../components/download/banner-thumbnail";
 import AppHighlight from "../../components/download/app-higlight/AppHighlight";
 import appHiglight from "../../assets/app.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function Download() {
   return (
     <div className="download-page flow-x-hidden">
       <Row gutter={24}>
-        <Col xs={24} sm={24} md={24} lg={18}>
+        <Col xs={{span: 24, order: 2}} sm={{span: 24, order: 2}} md={{span: 24, order: 1}} lg={{span: 15, order: 1}} xl={{span: 18, order: 1}}>
           {/* Banner Apps Section */}
           <section className="download-banner">
             <BannerThumbnails />
@@ -21,13 +23,31 @@ function Download() {
           <section className="download-related-apps">
             <h2 className="download-section-title">Ứng dụng cùng đơn vị</h2>
             <div className="download-app-grid">
-              <Row gutter={[24, 24]}>
-                {trendingApps.map((app) => (
-                  <Col xs={24} sm={12} lg={8} key={app.id}>
+              <Swiper
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  375: {
+                    slidesPerView: 2.3, // Mobile
+                  },
+                  768: {
+                    slidesPerView: 2.5, // Tablet
+                  },
+                  1024: {
+                    slidesPerView: 3, // Desktop small
+                  },
+                  1150: {
+                    slidesPerView: 3, // Desktop small
+                  },
+                }}
+              >
+                {trendingApps.map((app, index) => (
+                  <SwiperSlide key={index}>
                     <FeaturedApp title={app.title} image={app.image} />
-                  </Col>
+                  </SwiperSlide>
                 ))}
-              </Row>
+              </Swiper>
             </div>
           </section>
 
@@ -47,9 +67,30 @@ function Download() {
             </div>
 
             <div className="download-app-grid">
-              <Row gutter={[24, 24]}>
-                {featuredApps.map((app) => (
-                  <Col xs={24} sm={12} lg={12} key={`category-${app.id}`}>
+              <Swiper
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  375: {
+                    slidesPerView: 1.3, // Mobile
+                  },
+                  500: {
+                    slidesPerView: 2, // Mobile
+                  },
+                  768: {
+                    slidesPerView: 2, // Tablet
+                  },
+                  1024: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                  1150: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                }}
+              >
+                {featuredApps.map((app, index) => (
+                  <SwiperSlide key={index}>
                     <AppCard
                       title={app.title}
                       provider={app.provider}
@@ -57,13 +98,13 @@ function Download() {
                       downloads={app.downloads}
                       image={app.image}
                     />
-                  </Col>
+                  </SwiperSlide>
                 ))}
-              </Row>
+              </Swiper>
             </div>
           </section>
         </Col>
-        <Col xs={24} sm={24} md={24} lg={6}>
+        <Col xs={{span: 24, order: 1}} sm={{span: 24, order: 1}} md={24} lg={9} xl={6}>
           {/* App Highlight Section */}
           <AppHighlight
             rate={3.1}

@@ -1,16 +1,18 @@
 .rank-wrapper-rank {
-  margin: 32px;
+  padding: 32px;
+  background-color: blanchedalmond;
 }
 
 .rank-search-container {
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   height: 40px;
-  width: 363px;
   display: flex;
   align-items: center;
   margin-right: 16px;
   border: 1px solid #ffffff;
+  width: 300px;
+  flex: 1;
 }
 
 .rank-search-container > img {
@@ -23,24 +25,13 @@
   border: 0px;
   font-size: 14px;
   padding: 10px 8px;
-  width: 85%;
+  width: 100%;
 }
 
 .rank-search-container > input::placeholder {
   font-weight: 500;
   color: #b8b8b8;
   font-size: 14px;
-}
-
-.rank-header-rank {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-}
-
-.rank-filter-block {
-  display: flex;
-  align-items: center;
 }
 
 .rank-btn-filter {
@@ -53,17 +44,97 @@
   padding: 10px 24px;
   border-radius: 8px;
   cursor: pointer;
+  width: max-content;
 }
 
-.rank-btn-filter > img {
-  padding-right: 8px;
+.rank-btn-filter > span {
+  display: block;
+  padding-left: 8px;
 }
 
-.rank-wrapper-rank .rank-app-card-stats {
+.rank-header-rank {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rank-filter-block {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  justify-content: end;
+}
+
+/* ++++++++++++ body +++++++++++++ */
+
+.rank-table-rank-container {
+  margin-top: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px 12px 32px;
+  box-shadow: 0 1px 3px rgb(119 119 119 / 22%);
+}
+
+.rank-rank-list {
+  list-style-type: none;
+}
+
+.rank-app-list-item {
+  display: flex;
+  align-items: center;
+  padding: 17px 24px;
+  background-color: #f2f2f2;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.rank-app-list-item-index {
+  text-align: center;
+  font-size: 40px;
+  color: #8d8e8f;
+  font-weight: 700;
+  padding: 0 16px;
+}
+
+.rank-app-list-item-info {
+  padding: 0 17px;
+}
+
+.rank-app-list-item-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rank-app-list-item-details > :nth-child(1) {
+  display: inline-block;
+  width: 65%;
+}
+
+.rank-app-card-stats {
+  height: 42px;
+  display: inline-flex;
+}
+
+.rank-app-list-item-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 16px;
+  color: #5b6065;
+}
+
+.rank-app-list-item-provider {
+  font-weight: 500;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #8d8e8f;
+}
+
+.rank-app-card-stats {
+  align-items: center;
   gap: 4px;
-  float: right;
 }
 
 .rank-app-card-rating {
@@ -75,84 +146,25 @@
   border-radius: 20px;
   margin-right: 12px;
 }
-
+.rate {
+  font-size: 14px;
+  color: #f59e0b;
+  line-height: 10px;
+}
 .rank-app-card-downloads {
   font-size: 14px;
   color: #6b7280;
 }
 
-.rank-table-rank-container {
-  margin-top: 24px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: 32px 24px 12px 32px;
-  box-shadow: 0 1px 3px rgb(119 119 119 / 22%);
-}
-
-.rank-app-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 17px 24px;
-  background-color: #F2F2F2;
-  margin-bottom: 16px;
-  border-radius: 10px;
-}
-
-.rank-app-list-item-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.rank-app-list-item-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.rank-app-list-item-title {
-  font-weight: 600;
-  margin-bottom: 2px;
-  font-size: 16px;
-  color: #5B6065;
-}
-
-.rank-app-list-item-provider {
-  font-weight: 500;
-  margin-top: 2px;
-  font-size: 14px;
-  color: #8D8E8F;
-}
-
-.rank-flex {
-  display: flex;
-}
-
-.rank-flex > div > label {
-  font-size: 40px;
-  color: #8D8E8F;
-  font-weight: 700;
-}
-
-.rank-items-center {
-  align-items: center;
-}
-
 /* top 1 ranking */
 
-.rank-app-list-item-top-1 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 17px 24px;
-  margin-bottom: 16px;
-  border-radius: 10px;
-  background-color: #EE0033;
+.top-1 {
+  background-color: #ee0033;
   color: white;
 }
 
 .rank-app-card-rating-top-1 {
-  background-color: #FFFADE4D;
+  background-color: #fffade4d;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -167,4 +179,68 @@
 
 .rank-color-gray {
   color: #ededed !important;
+}
+
+@media (max-width: 500px) {
+  .rank-btn-filter {
+    padding: 10px !important;
+  }
+
+  .rank-app-list-item-title {
+    font-size: 14px;
+  }
+
+  .rank-app-list-item-provider {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+  }
+
+  .rank-app-card-rating {
+    font-size: 12px;
+  }
+
+  .rate {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .rank-app-card-downloads {
+    font-size: 12px;
+  }
+
+  .rank-app-list-item-info {
+    padding: 0 8px;
+  }
+
+  .rank-app-list-item-index {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .rank-app-card-stats {
+    height: unset !important;
+    margin-top: 5px;
+  }
+
+  .rank-table-rank-container{
+    padding: 16px !important;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .rank-btn-filter > span {
+    display: none;
+  }
+
+  .rank-filter-block{
+    justify-content: unset !important;
+  }
+  
+  .rank-search-container{
+    width: max-content;
+  }
 }

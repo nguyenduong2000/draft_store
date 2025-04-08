@@ -104,74 +104,58 @@ function Rank() {
             ranks.map((item, index) => (
               <li
                 key={index}
-                className={`${
-                  index === 0
-                    ? "rank-app-list-item-top-1"
-                    : "rank-app-list-item"
-                }`}
+                className={`rank-app-list-item ${index === 0 ? "top-1" : ""}`}
               >
-                <div className="rank-flex rank-items-center">
-                  <div
-                    style={{
-                      width: "65px",
-                      textAlign: "center",
-                      paddingRight: "16px",
-                    }}
-                  >
-                    <label className={index === 0 ? "rank-color-white" : " "}>
-                      {index + 1}
-                    </label>
-                  </div>
-                  <div className="rank-app-list-item-info">
-                    <Avatar src={item.img} size={40} />
-                    <div className="rank-app-list-item-details">
-                      <h3
-                        className={
-                          "rank-app-list-item-title" +
-                          (index === 0 ? " rank-color-white" : "")
-                        }
-                      >
-                        {item.title}
-                      </h3>
-                      <p
-                        className={
-                          "rank-app-list-item-provider" +
-                          (index === 0 ? " rank-color-gray" : "")
-                        }
-                      >
-                        {item.provider}
-                      </p>
-                    </div>
-                  </div>
+                <div className="rank-app-list-item-index">
+                  <label className={index === 0 ? "rank-color-white" : " "}>
+                    {index + 1}
+                  </label>
                 </div>
-                <div className="rank-app-card-stats">
-                  <div
-                    className={`${
-                      index === 0
-                        ? "rank-app-card-rating-top-1"
-                        : "rank-app-card-rating"
-                    }`}
-                  >
-                    <span>{item.rate}</span>
-                    <Rate
-                      disabled
-                      defaultValue={1}
-                      count={1}
-                      style={{
-                        fontSize: "14px",
-                        color: "#f59e0b",
-                        lineHeight: "10px",
-                      }}
-                    />
+                <div className="rank-app-list-item-info">
+                  <Avatar src={item.img} size={40} />
+                </div>
+                <div className="rank-app-list-item-details">
+                  <div>
+                    <h3
+                      className={
+                        "rank-app-list-item-title" +
+                        (index === 0 ? " rank-color-white" : "")
+                      }
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      className={
+                        "rank-app-list-item-provider" +
+                        (index === 0 ? " rank-color-gray" : "")
+                      }
+                    >
+                      {item.provider}
+                    </p>
                   </div>
-                  <span
-                    className={
-                      "rank-app-card-downloads" +
-                      (index === 0 ? " rank-color-white" : "")
-                    }
-                  >
-                    {item.downloads} lượt tải
-                  </span>
+                  <div className="rank-app-card-stats">
+                    <div
+                      className={`rank-app-card-rating ${
+                        index === 0 ? "top-1" : ""
+                      }`}
+                    >
+                      <span>{item.rate}</span>
+                      <Rate
+                        disabled
+                        defaultValue={1}
+                        count={1}
+                        className="rate"
+                      />
+                    </div>
+                    <span
+                      className={
+                        "rank-app-card-downloads" +
+                        (index === 0 ? " rank-color-white" : "")
+                      }
+                    >
+                      {item.downloads} lượt tải
+                    </span>
+                  </div>
                 </div>
               </li>
             ))}

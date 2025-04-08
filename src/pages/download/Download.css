@@ -1,3 +1,20 @@
-.flow-x-hidden{
-    overflow-x: hidden;
+.flow-x-hidden {
+  overflow-x: hidden;
+}
+.download-related-apps {
+  margin-bottom: 30px;
+}
+
+.download-section-title {
+  margin-bottom: 10px;
+}
+
+.download-trending-apps{
+    margin-bottom: 20px;
+}
+
+.download-section-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

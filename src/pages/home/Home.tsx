@@ -5,11 +5,12 @@ import banner from "../../assets/banner.png";
 import imgApp from "../../assets/image_app.png";
 import { AppCard } from "../../components/home/AppCard";
 import FeaturedApp from "../../components/home/FeaturedApp/FeaturedApp";
-import { Content } from "antd/es/layout/layout";
 import AppListItem from "../../components/home/AppListItem/AppListItem";
 import img_trending_1 from "../../assets/trending_1.png";
 import img_trending_2 from "../../assets/trending_2.png";
 import img_trending_3 from "../../assets/trending_3.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export interface IHomeProps {}
 
@@ -30,9 +31,49 @@ export const featuredApps = [
     downloads: 2145,
     image: imgApp,
   },
+  {
+    id: 2,
+    title: "Viettel Home",
+    provider: "Tổng công ty viễn thông Viettel - VTT",
+    rating: 4.8,
+    downloads: 2145,
+    image: imgApp,
+  },
+  {
+    id: 2,
+    title: "Viettel Home",
+    provider: "Tổng công ty viễn thông Viettel - VTT",
+    rating: 4.8,
+    downloads: 2145,
+    image: imgApp,
+  },
 ];
 
 export const trendingApps = [
+  {
+    id: 1,
+    title: "Viettel Post",
+    provider: "Viettel IDC",
+    rating: 4.7,
+    downloads: 1890,
+    image: img_trending_1,
+  },
+  {
+    id: 2,
+    title: "MyGo",
+    provider: "Viettel IDC",
+    rating: 4.6,
+    downloads: 1750,
+    image: img_trending_2,
+  },
+  {
+    id: 3,
+    title: "My Dio",
+    provider: "Viettel IDC",
+    rating: 4.5,
+    downloads: 1620,
+    image: img_trending_3,
+  },
   {
     id: 1,
     title: "Viettel Post",
@@ -173,9 +214,30 @@ export default function Home(props: IHomeProps) {
             </div>
 
             <div className="home-app-grid">
-              <Row gutter={[24, 24]}>
-                {featuredApps.map((app) => (
-                  <Col xs={24} sm={12} lg={12} key={app.id}>
+              <Swiper
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  375: {
+                    slidesPerView: 1.3, // Mobile
+                  },
+                  500:{
+                    slidesPerView: 2, // Mobile
+                  },
+                  768: {
+                    slidesPerView: 2, // Tablet
+                  },
+                  1024: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                  1150: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                }}
+              >
+                {featuredApps.map((app, index) => (
+                  <SwiperSlide key={index}>
                     <AppCard
                       title={app.title}
                       provider={app.provider}
@@ -183,9 +245,9 @@ export default function Home(props: IHomeProps) {
                       downloads={app.downloads}
                       image={app.image}
                     />
-                  </Col>
+                  </SwiperSlide>
                 ))}
-              </Row>
+              </Swiper>
             </div>
           </section>
 
@@ -193,13 +255,31 @@ export default function Home(props: IHomeProps) {
           <section className="home-section-container">
             <h2 className="home-section-title">Ứng dụng thịnh hành</h2>
             <div className="home-app-grid">
-              <Row gutter={[24, 24]}>
-                {trendingApps.map((app) => (
-                  <Col xs={24} sm={12} lg={8} key={app.id}>
+              <Swiper
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  375: {
+                    slidesPerView: 2.3, // Mobile
+                  },
+                  768: {
+                    slidesPerView: 2.5, // Tablet
+                  },
+                  1024: {
+                    slidesPerView: 3, // Desktop small
+                  },
+                  1150: {
+                    slidesPerView: 3, // Desktop small
+                  },
+                }}
+              >
+                {trendingApps.map((app, index) => (
+                  <SwiperSlide key={index}>
                     <FeaturedApp title={app.title} image={app.image} />
-                  </Col>
+                  </SwiperSlide>
                 ))}
-              </Row>
+              </Swiper>
             </div>
           </section>
 
@@ -219,9 +299,30 @@ export default function Home(props: IHomeProps) {
             </div>
 
             <div className="home-app-grid">
-              <Row gutter={[24, 24]}>
-                {featuredApps.map((app) => (
-                  <Col xs={24} sm={12} lg={12} key={`category-${app.id}`}>
+              <Swiper
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  375: {
+                    slidesPerView: 1.3, // Mobile
+                  },
+                  500:{
+                    slidesPerView: 2, // Mobile
+                  },
+                  768: {
+                    slidesPerView: 2, // Tablet
+                  },
+                  1024: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                  1150: {
+                    slidesPerView: 2, // Desktop small
+                  },
+                }}
+              >
+                {featuredApps.map((app, index) => (
+                  <SwiperSlide key={index}>
                     <AppCard
                       title={app.title}
                       provider={app.provider}
@@ -229,9 +330,9 @@ export default function Home(props: IHomeProps) {
                       downloads={app.downloads}
                       image={app.image}
                     />
-                  </Col>
+                  </SwiperSlide>
                 ))}
-              </Row>
+              </Swiper>
             </div>
           </section>
         </Col>
